@@ -24,6 +24,8 @@ public class DBConnection {
     private static final String username = "U05kZj";
     private static String password = "53688532765";
 
+
+
     public static Connection startConnection() {
 
         try {
@@ -37,11 +39,22 @@ public class DBConnection {
         }
         catch(SQLException s)
         {
-            System.out.println(s.getMessage());
+            System.out.println("SQL exception Error: " + s.getMessage());
         }
 
         return conn;
     }
 
+    public static void closeConnection()
+    {
+        try {
+            conn.close();
+            System.out.println("Connection closed!");
+        }
+        catch(SQLException e)
+        {
+            System.out.println("SQL exception Error:" + e.getMessage());
+        }
+    }
 
 }
