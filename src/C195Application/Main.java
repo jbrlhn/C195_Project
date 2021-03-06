@@ -11,17 +11,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../View/ScheduleMenu.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("../View/LoginMenu.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
 
     public static void main(String[] args) {
 
-        DBConnection.startConnection();
+        //DBConnection.startConnection();
         launch(args);
-        DBConnection.closeConnection();
+        //DBConnection.closeConnection();
     }
 }

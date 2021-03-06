@@ -1,5 +1,6 @@
 package utils;
 
+
 import com.mysql.jdbc.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
@@ -20,7 +21,6 @@ public class DBConnection {
     private static final String MYYSQLJDBCDriver = "com.mysql.jdbc.Driver";
     private static Connection conn = null;
 
-
     private static final String username = "U05kZj";
     private static String password = "53688532765";
 
@@ -32,16 +32,26 @@ public class DBConnection {
             Class.forName(MYYSQLJDBCDriver);
             conn = (Connection)DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("Connection successful");
+            System.out.println();
+
         }
         catch(ClassNotFoundException e)
         {
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         catch(SQLException s)
         {
-            System.out.println("SQL exception Error: " + s.getMessage());
+            //System.out.println("SQL exception Error: " + s.getMessage());
+            s.printStackTrace();
         }
 
+        return conn;
+    }
+
+
+    public static Connection getConnection()
+    {
         return conn;
     }
 
@@ -51,9 +61,9 @@ public class DBConnection {
             conn.close();
             System.out.println("Connection closed!");
         }
-        catch(SQLException e)
+        catch(Exception e)
         {
-            System.out.println("SQL exception Error:" + e.getMessage());
+
         }
     }
 
