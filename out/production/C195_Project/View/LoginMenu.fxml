@@ -4,15 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller.LoginMenuController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginMenuController">
    <children>
       <Pane prefHeight="300.0" prefWidth="400.0">
          <children>
@@ -31,11 +32,17 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <TextField layoutX="35.0" layoutY="114.0" prefHeight="25.0" prefWidth="232.0" promptText="UserName" />
-            <PasswordField layoutX="35.0" layoutY="168.0" prefHeight="25.0" prefWidth="232.0" promptText="Password" />
-            <Button defaultButton="true" layoutX="37.0" layoutY="218.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: gold;" text="SIGN IN" />
-            <Button defaultButton="true" layoutX="151.0" layoutY="218.0" mnemonicParsing="false" prefWidth="100.0" style="-fx-background-color: gold;" text="Exit" textAlignment="CENTER" />
+            <PasswordField fx:id="passwordText" layoutX="35.0" layoutY="168.0" prefHeight="25.0" prefWidth="232.0" promptText="Password" />
+            <Button defaultButton="true" layoutX="37.0" layoutY="218.0" mnemonicParsing="false" onAction="#signInAction" prefWidth="100.0" style="-fx-background-color: gold;" text="SIGN IN" />
+            <Button defaultButton="true" layoutX="151.0" layoutY="218.0" mnemonicParsing="false" onAction="#exitAction" prefWidth="100.0" style="-fx-background-color: gold;" text="Exit" textAlignment="CENTER" />
+            <TextField fx:id="userNameText" layoutX="37.0" layoutY="119.0" prefHeight="25.0" prefWidth="232.0" promptText="UserName" />
          </children>
       </Pane>
    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>
